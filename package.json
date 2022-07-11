@@ -5,8 +5,8 @@
   "author": "johnscollins98 <johnscollins98@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "postinstall": "npm --cwd client install && npm --cwd server install",
-    "build": "npm --cwd client build",
-    "start": "npm --cwd server start"
+    "postinstall": "npm --prefix client install && npm --prefix server install",
+    "build": "npm --prefix client build",
+    "start": "npm --prefix server start"
   }
 }

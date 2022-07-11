@@ -1,0 +1,12 @@
+{
+  "name": "socket-io-basic-messenger",
+  "version": "1.0.0",
+  "repository": "https://github.com/johnscollins98/socket-io-basic-messenger.git",
+  "author": "johnscollins98 <johnscollins98@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "postinstall": "yarn --cwd client && yarn --cwd server",
+    "build": "yarn --cwd client build",
+    "start": "yarn --cwd server start"
+  }
+}

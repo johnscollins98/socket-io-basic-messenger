@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from 'react';
 import io from 'socket.io-client';
 
-const socket = io.connect('http://localhost:3001');
+const socket = io();
 
 function App() {
   const [name, setName] = useState(localStorage.getItem('name') ?? '');
@@ -28,10 +28,7 @@ function App() {
   }, [receiveMessage]);
 
   return (
-    <div
-      className="App p-3 d-flex flex-column container-fluid"
-      style={{ height: '100vh', overflow: 'hidden' }}
-    >
+    <div className="App p-3 d-flex flex-grow-1 flex-column container-fluid">
       <div className="name mb-3">
         <label htmlFor="your-name" className="form-label">
           Enter your name:{' '}
@@ -48,7 +45,11 @@ function App() {
       </div>
       <div
         className="messages flex-grow-1"
-        style={{ display: 'flex', flexDirection: 'column-reverse', overflow: 'auto' }}
+        style={{
+          display: 'flex',
+          flexDirection: 'column-reverse',
+          overflow: 'auto',
+        }}
       >
         {messages.map((m, i) => (
           <div

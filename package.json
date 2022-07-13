@@ -7,7 +7,12 @@
   "scripts": {
     "postinstall": "npm --prefix client install && npm --prefix server install",
     "build": "npm --prefix client run build",
-    "prestart": "npm run build",
-    "start": "node ./server/index.js"
+    "start": "npm --prefix server run start",
+    "dev-client": "npm --prefix client run start",
+    "dev-server": "npm --prefix server run dev",
+    "dev": "concurrently \"npm run dev-client\" \"set PORT=3001 && npm run dev-server\""
+  },
+  "devDependencies": {
+    "concurrently": "^7.2.2"
   }
 }

@@ -1,6 +1,6 @@
 # `socket-io` Basic Messenger
 
-This application is a basic chat room application created using `socket.io`, `express` and `create-react-app`.
+This application is a basic chat room application created using `typescript`, `socket.io`, `express` and `create-react-app`.
 
 ## Requirements
 

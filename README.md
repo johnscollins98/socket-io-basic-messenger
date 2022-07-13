@@ -21,7 +21,7 @@ After cloning the repo:
 ###  Production
 
 * Run `npm install`
-* Run `npm run build` to build the client code.
+* Run `npm run build` to build the client and server code.
 * Run `npm run start` to launch the server.
 
 This will require a PORT to be defined as an environment variable, either by yourself or by the hosting tool.

@@ -1,14 +1,17 @@
-import { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import io from 'socket.io-client';
+import { MessageData } from '../lib/model/MessageData';
 
 const socket = io();
 
 function App() {
   const [name, setName] = useState(localStorage.getItem('name') ?? '');
   const [message, setMessage] = useState('');
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState<(MessageData & { me: boolean })[]>(
+    []
+  );
 
-  const sendMessage = (e) => {
+  const sendMessage = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setMessages([{ name, message, me: true }, ...messages]);
     setMessage('');
@@ -17,7 +20,7 @@ function App() {
   };
 
   const receiveMessage = useCallback(
-    ({ message, name }) => {
+    ({ message, name }: MessageData) => {
       setMessages([{ name, message, me: false }, ...messages]);
     },
     [messages]

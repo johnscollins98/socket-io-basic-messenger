@@ -22,8 +22,8 @@ io.on('connection', (socket) => {
 
   socket.on(
     'SEND_MESSAGE',
-    ({ message, name }: { message: string; name: string }) => {
-      socket.broadcast.emit('RECEIVE_MESSAGE', { message, name });
+    (payload: { message: string; name: string }) => {
+      socket.broadcast.emit('RECEIVE_MESSAGE', payload);
     }
   );
 });

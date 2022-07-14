@@ -22,7 +22,7 @@ After cloning the repo:
 
 * Run `npm install`
 * Run `npm run build` to build the client and server code.
-* Run `npm run start` to launch the server.
+* Run `npm run start` to launch the server. It will launch on `http://localhost:3001` by default.
 
 This will require a PORT to be defined as an environment variable, either by yourself or by the hosting tool.
 
